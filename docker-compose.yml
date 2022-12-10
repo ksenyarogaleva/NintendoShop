@@ -1,29 +1,6 @@
 version: '3.4'
 
-services:    
-  nintendoshop.catalog.db:
-    image: 'mongo'
-    restart: always
-    container_name: 'nintendoshop.catalog.db'
-    environment:
-      MONGO_INITDB_DATABASE : nintendoshop.catalog.db
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
-    volumes:
-      - ${WEBAPP_STORAGE_HOME}/site:/data/db
-    ports:
-      - 27017:27017
-
-  mongo-express:
-    image: 'mongo-express'
-    restart: always
-    ports:
-      - 8081:8081
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: admin
-    depends_on:
-      - mongo
+services:
       
   nintendoshop.catalog:
     image: ${DOCKER_REGISTRY-}nintendoshopcatalog
@@ -32,3 +9,32 @@ services:
       dockerfile: NintendoShop.Catalog/Dockerfile
     depends_on:
       - nintendoshop.catalog.db
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password
+      ME_CONFIG_MONGODB_SERVER: nintendoshop.catalog.db
+    volumes: 
+      - ./data:/data/db      
+    ports:
+      - 8081:8081
+    depends_on:
+      - nintendoshop.catalog.db
+      
+  nintendoshop.catalog.db:
+    image: mongo:5.0
+    restart: always
+    container_name: nintendoshop.catalog.db
+    environment:
+      MONGO_INITDB_DATABASE : nintendoshop.catalog.db
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - ./database/db:/data/db
+      - ./database/dev.archive:/Databases/dev.archive
+      - ./database/production:/Databases/production
+    ports:
+      - 27017:27017

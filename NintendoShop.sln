@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NintendoShop.Catalog", "NintendoShop.Catalog\NintendoShop.Catalog.csproj", "{D86A2DC0-11B0-468B-A6E2-65C45988F4D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NintendoShop.Catalog", "NintendoShop.Catalog\NintendoShop.Catalog.csproj", "{D86A2DC0-11B0-468B-A6E2-65C45988F4D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{19E8BE81-2E3C-41D7-A45A-DE4A31E49E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NintendoShop.Catalog.BLL", "NintendoShop.Catalog.BL\NintendoShop.Catalog.BLL.csproj", "{45237D4B-90A9-4D0E-90D0-7E3997CA8449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NintendoShop.Catalog.BLL", "NintendoShop.Catalog.BL\NintendoShop.Catalog.BLL.csproj", "{45237D4B-90A9-4D0E-90D0-7E3997CA8449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NintendoShop.Catalog.DAL", "NintendoShop.Catalog.DAL\NintendoShop.Catalog.DAL.csproj", "{9720CF09-8058-4CA5-8C0D-FDC7C06A2CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NintendoShop.Catalog.DAL", "NintendoShop.Catalog.DAL\NintendoShop.Catalog.DAL.csproj", "{9720CF09-8058-4CA5-8C0D-FDC7C06A2CC2}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{20A34AE3-1BD5-4A1A-A2F5-685FEF1C122F}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{B9514407-040C-4EDA-84A2-502C5436A3AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +31,10 @@ Global
 		{9720CF09-8058-4CA5-8C0D-FDC7C06A2CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9720CF09-8058-4CA5-8C0D-FDC7C06A2CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9720CF09-8058-4CA5-8C0D-FDC7C06A2CC2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20A34AE3-1BD5-4A1A-A2F5-685FEF1C122F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20A34AE3-1BD5-4A1A-A2F5-685FEF1C122F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20A34AE3-1BD5-4A1A-A2F5-685FEF1C122F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20A34AE3-1BD5-4A1A-A2F5-685FEF1C122F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9514407-040C-4EDA-84A2-502C5436A3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9514407-040C-4EDA-84A2-502C5436A3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9514407-040C-4EDA-84A2-502C5436A3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9514407-040C-4EDA-84A2-502C5436A3AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
