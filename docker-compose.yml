@@ -7,14 +7,20 @@ services:
     build:
       context: .
       dockerfile: NintendoShop.Catalog/Dockerfile
+    ports:
+      - 8000:80
     depends_on:
       - nintendoshop.catalog.db
+    links:
+      - nintendoshop.catalog.db
+    networks:
+      - dbnetwork
 
   mongo-express:
     image: mongo-express
     restart: always
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: password
       ME_CONFIG_MONGODB_SERVER: nintendoshop.catalog.db
     volumes: 
@@ -23,14 +29,16 @@ services:
       - 8081:8081
     depends_on:
       - nintendoshop.catalog.db
+    networks:
+      - dbnetwork
       
   nintendoshop.catalog.db:
     image: mongo:5.0
     restart: always
     container_name: nintendoshop.catalog.db
     environment:
-      MONGO_INITDB_DATABASE : nintendoshop.catalog.db
-      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_DATABASE : nintendoshop-catalog-db
+      MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
     volumes:
       - ./database/db:/data/db
@@ -38,3 +46,9 @@ services:
       - ./database/production:/Databases/production
     ports:
       - 27017:27017
+    networks:
+      - dbnetwork
+
+networks:
+  dbnetwork:
+    driver: bridge
